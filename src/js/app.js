@@ -97,7 +97,8 @@ App = {
     App.contracts.Sukien.deployed().then(function(instance){
       return instance.search(mssvtk);
     }).then(function(result){
-     Notiflix.Report.Info('Thông tin vé','MSSV: '+result[0]+' Họ Và Tên: '+result[1]+' Tên: '+result[2]+' Mã Sự Kiện: '+result[3]+' Mã Vé: '+result[4]+'','Ok');
+      // Notiflix.Report.Success('Notiflix Success','"Do not try to become a person of success but try to become a person of value." <br><br>- Albert Einstein','Click');
+     Notiflix.Report.Info('Thông tin vé','MSSV: '+result[0]+' <br>Họ Và Tên: '+result[1]+' <br>Tên: '+result[2]+' <br>Mã Sự Kiện: '+result[3]+' <br>Mã Vé: '+result[4]+'','Ok');
     });
   },
   in: function(){

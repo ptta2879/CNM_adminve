@@ -332,7 +332,15 @@
         <script src="..\libs\Notiflix-2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
         
 <script type="text/javascript">
-   Notiflix.Notify.Init({position:"right-bottom",});
+   Notiflix.Report.Init({
+        svgSize:'90px',
+        plainText:false,
+        messageMaxLength:200,
+        messageFontSize: '16px',
+        buttonFontSize:'16px',
+        messageMaxLength:500,
+        position:"right-bottom"
+    });
     $("#Loading").show();
     $("#than").hide();
     $.ajax({
