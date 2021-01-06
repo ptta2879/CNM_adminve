@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "test": "lite-server",
+    "start": "npm run test",
+    "dev": "lite-server"
   },
   "devDependencies": {
     "dotenv": "^4.0.0",
