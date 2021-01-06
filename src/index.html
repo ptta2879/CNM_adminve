@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Trang chủ</title>
+       
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="..\images\favicon.ico">
+
+        <!-- Footable css -->
+        <link href="..\libs\footable\footable.core.min.css" rel="stylesheet" type="text/css">
+
+        <!-- App css -->
+        <link href="..\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="..\css\icons.min.css" rel="stylesheet" type="text/css">
+        <link href="..\css\app.min.css" rel="stylesheet" type="text/css">
+                <script src="..\js\jquery-3.4.1.min.js"></script>
+        <script src="..\js\bootstrap.min.js"></script>
+        
+      <script type="text/javascript">
+        if(sessionStorage.getItem('username') == null || sessionStorage.getItem('password') == null || sessionStorage.getItem('phanquyen') != 1 ){
+                  window.location = 'login.html';
+                }
+      </script>
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                    <li class="d-none d-sm-block">
+                        <form onsubmit="App.timkiem(); return false;" class="app-search">
+                            <div class="app-search-box">
+                                <div class="input-group">
+                                    <input id="timkiem" type="text" class="form-control" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn" type="submit">
+                                            <i class="fe-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="index.html" class="logo text-center">
+                        <span><img src="images\logo-light.png" alt="" height="50"></span>
+                    </a>
+                </div>
+
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+                
+                    
+                </ul>
+                
+                                                    
+
+            </div>
+            <!-- end Topbar -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+
+                <div class="slimscroll-menu">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+
+                        <ul class="metismenu" id="side-menu">
+
+                            <li class="menu-title">Chức Năng</li>
+                            
+                            <li class="mm-active">
+                                <a href="javascript: void(0);" class="waves-effect active" aria-expanded="true">
+                                    <i class="remixicon-table-line"></i>
+                                    <span> Vé khai giảng </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level mm-collapse mm-show" aria-expanded="false" style="">
+                                    
+                                    
+                                    <li class="mm-active">
+                                        <a href="index.html" class="active">Danh sách đăng ký và duyệt vé</a>
+                                    </li>
+                                    <li>
+                                        <a href="DanhSach.html">Danh sách vé đã duyệt</a>
+                                    </li>
+                                    
+                                </ul>
+                                
+                                
+                            </li>
+                            <li>
+                                <a id="metamask" href="javascript: void(0);" class="waves-effect" >
+                                    <i class="remixicon-gitlab-fill"></i>
+                                    <span> Kết nối MetaMask </span>
+                                </a></li>
+                                <li>
+                                  <a onclick="App.dangxuat()" href="javascript: void(0);" class="waves-effect">
+                                    <i class="remixicon-logout-box-line"></i>
+                                    <span>Đăng xuất</span>
+                                  </a>
+                                  
+                                </li>
+
+                        </ul>
+
+                    </div>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+           
+            <div  class="content-page" >
+               
+                <div  class="content" >
+                <div id="Loading" class="spinner-grow text-primary m-2" role="status"></div>
+                    <!-- Start Content-->
+                    
+                    <div  class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Vé khai giảng</a></li>
+                                            <li class="breadcrumb-item active">Danh Sách đăng ký và duyệt vé</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Danh sách đăng ký và duyệt vé</h4>
+
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div  class="card-box">
+
+                                    <h4 class="header-title">Danh sách</h4>
+                                    <p class="sub-header">
+                                        Danh sách những sinh viên đã đăng ký và duyệt vé cho các sinh viên
+                                    </p>
+                                    <div class="mb-2">
+                                        <div class="row">
+                                            <div class="col-12 text-sm-center form-inline">
+                                                
+                                                <div class="form-group">
+                                                    <input id="demo-foo-search" type="text" placeholder="Tìm kiếm" class="form-control form-control-sm" autocomplete="on">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="table-responsive">
+                                        <table id="demo-foo-addrow" class="table table-hover table-bordered toggle-circle mb-0" data-page-size="5">
+                                        <thead class="table-purple">
+                                        <tr>
+                                            <!-- <th data-sort-ignore="true" class="min-width"></th> -->
+                                            <th data-sort-initial="true" data-toggle="true" class="text-dark min-width">STT</th>
+                                            <th data-sort-ignore="true" class="text-dark">MSSV</th>
+                                            <th class="text-dark">Họ Tên</th>
+                                            <th class="text-dark">Tên</th>
+                                            <th class="text-dark">Mã sự kiện</th>
+                                            <th>Xác nhận</th>
+                                            
+                                        </tr>
+                                        </thead>
+                                        <tbody id="tableds">
+
+                                        </tbody>
+                                        <tfoot>
+                                        <tr class="active">
+                                            <td colspan="9">
+                                                <div class="text-right">
+                                                    <ul class="pagination pagination-split justify-content-end footable-pagination m-t-10"></ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                    </div> <!-- end .table-responsive-->
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+<div id="update-modal" class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header d-block">
+                                    <h4 class="modal-title text-center">Xác nhận vé</h4>
+                                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button> -->
+                                  </div>
+                                  <form class="needs-validation" onsubmit ="App.xacnhan(); return false;" novalidate method="POST">
+                                  <div class="modal-body p-4">
+                                      <div class="form-row">
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label for="masinhvien" class="control-label">Mã Số sinh viên</label>
+                                                  <input type="text" class="form-control" id="masinhvien" placeholder="" name="masinhvien"  required >
+                                                  <!-- <div class="invalid-feedback">
+                                                    Vui lòng điền họ và tên đệm
+                                                  </div> -->
+                                              </div>
+                                          </div>
+                                      </div>
+                                      
+
+                                      
+                                      <div class="form-row">
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="field-1" class="control-label">Họ và tên</label>
+                                                  <input type="text" class="form-control" id="hoten" placeholder="" name="chongoi"  required >
+                                                  <div class="invalid-feedback">
+                                                    Vui lòng điền họ tên
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group">
+                                                  <label for="field-2" class="control-label">Tên</label>
+                                                  <input type="text" class="form-control" id="ten" placeholder="" name="khachmoi" required>
+                                                  <div class="invalid-feedback">
+                                                    Vui lòng điền tên
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                      <div class="form-row">
+                                          <div class="col-md-12">
+                                              <div class="form-group">
+                                                  <label for="masukien" class="control-label">Mã Sự kiện</label>
+                                                  <input type="text" class="form-control" id="masukien" placeholder="" name="masukien"  required >
+                                                  <!-- <div class="invalid-feedback">
+                                                    Vui lòng điền họ và tên đệm
+                                                  </div> -->
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      
+
+                                      
+                                  </div>
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Đóng</button>
+                                      <button type="submit" id="create" name="create" class="btn btn-success waves-effect waves-light" value="">Cập nhật</button>
+                                  </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+
+                    </div>
+                        
+                        <!-- end row -->
+                        
+                    </div> <!-- container -->
+
+                </div> <!-- content -->
+                
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                               2020-2021 &copy; <i id="account"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar -->
+          <!-- Vendor js -->
+        <script src="..\js\vendor.min.js"></script>
+
+        <!-- Footable js -->
+        <script src="..\libs\footable\footable.all.min.js"></script>
+
+        <!-- Init js -->
+        <script src="..\js\pages\foo-tables.init.js"></script>
+
+        <!-- App js -->
+        
+        <script src="..\js\app.min.js"></script>
+        
+        <script src="..\js\web3.min.js"></script>
+        <script src="..\js\truffle-contract.js"></script>
+        <script src="..\libs\Notiflix-2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
+        
+<script type="text/javascript">
+   Notiflix.Notify.Init({position:"right-bottom",});
+    $("#Loading").show();
+    $("#than").hide();
+    $.ajax({
+      type: 'GET',
+      url: 'http://ptta-cnm.herokuapp.com/dangkyve/trangthai',
+      dataType : 'json',
+      async: false,
+      success: function(data){
+        var count = data.length;
+        var stt=1;
+        for(var i=0; i<count;i++){
+          var mssv = data[i].mssv;
+          var ten = data[i].ten;
+          var hoten = data[i].hoten;
+          var masukien = data[i].masukien;
+      var datajs = JSON.stringify(data[i]);
+
+          var show = "<tr><td>"+stt+"</td><td>"+mssv+"</td><td>"+hoten+"</td><td>"+ten+"</td><td>"+masukien+"</td><td><button type=\'button\' class=\"btn btn-sm btn-primary btn-xs btn-icon\" id=\'nut\'  data-toggle=\'modal\' data-target=\'#update-modal\' data-val=\'"+datajs+"\'><i class=\"remixicon-check-line\"></i></button></td></tr>";
+          $("#tableds").append(show);
+          stt++;
+        };
+        $("#Loading").hide();
+        $("#than").show();
+      }
+
+    });
+            var dienra = $("#update-modal .modal-body #remove");
+
+            $(".btn-icon").on("click", function () {
+                // console.log(this);
+                var myValue = $(this).data('val');
+                // $(".modal-body #bookId").val( myBookId );
+                
+                var obj = $("#update-modal");
+
+                
+
+
+                $(obj).find(".modal-body #add").append(dienra);
+
+                if(myValue.trangthai == 1){
+                    $(obj).find(".modal-body #add #customRadio1").prop( "checked", true );
+                }
+                else{
+                    $(obj).find(".modal-body #add #customRadio2").prop( "checked", true );
+                }
+                // console.log(dienra);
+                // console.log(test[0]);
+                // var hi = test[0];
+                // var start = hi.trim().slice(-2,2);
+                $(obj).find(".modal-header .modal-title").text("Xác nhận vé " + myValue.mssv);
+                $(obj).find(".modal-footer #create").text("Cập nhật");
+                $(obj).find(".modal-footer #create").prop('value', '');
+                // console.log(start);
+                $(obj).find(".modal-body #masinhvien").prop( "readonly", true );
+                $(obj).find(".modal-body #masukien").prop( "readonly", true );
+                $(obj).find(".modal-body #masinhvien").val(myValue.mssv);
+                $(obj).find(".modal-body #hoten").val(myValue.hoten);
+                $(obj).find(".modal-body #ten").val(myValue.ten);
+                $(obj).find(".modal-body #masukien").val(myValue.masukien);
+
+            });
+</script>
+<script src="..\js\app.js"></script>
+        
+    </body>
+
+</html>

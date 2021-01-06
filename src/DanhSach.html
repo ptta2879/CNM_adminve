@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Danh sách vé đã duyệt</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+        <meta content="Coderthemes" name="author">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="..\images\favicon.ico">
+
+        <!-- third party css -->
+        <link href="..\libs\datatables\dataTables.bootstrap4.css" rel="stylesheet" type="text/css">
+        <link href="..\libs\datatables\responsive.bootstrap4.css" rel="stylesheet" type="text/css">
+        <link href="..\libs\datatables\buttons.bootstrap4.css" rel="stylesheet" type="text/css">
+        <link href="..\libs\datatables\select.bootstrap4.css" rel="stylesheet" type="text/css">
+        <!-- third party css end -->
+
+        <!-- App css -->
+        <link href="..\css\bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="..\css\icons.min.css" rel="stylesheet" type="text/css">
+        <link href="..\css\app.min.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript">if(sessionStorage.getItem('username') == null || sessionStorage.getItem('password') == null || sessionStorage.getItem('phanquyen') != 1 ){
+                  window.location = 'login.html';
+                }</script>
+    </head>
+
+    <body>
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Topbar Start -->
+            <div class="navbar-custom">
+                <ul class="list-unstyled topnav-menu float-right mb-0">
+
+                    <!-- <li class="d-none d-sm-block">
+                        <form class="app-search">
+                            <div class="app-search-box">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <div class="input-group-append">
+                                        <button class="btn" type="submit">
+                                            <i class="fe-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li> -->
+                </ul>
+
+                <!-- LOGO -->
+                <div class="logo-box">
+                    <a href="index.html" class="logo text-center">
+                         <span><img src="images\logo-light.png" alt="" height="50"></span>
+                    </a>
+                </div>
+
+                <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                    <li>
+                        <button class="button-menu-mobile waves-effect waves-light">
+                            <i class="fe-menu"></i>
+                        </button>
+                    </li>
+
+        
+                    
+                </ul>
+            </div>
+            <!-- end Topbar -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+
+                <div class="slimscroll-menu">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+
+                        <ul class="metismenu" id="side-menu">
+
+                            <li class="menu-title">Chức Năng</li>
+                            
+                            <li class="mm-active">
+                                <a href="javascript: void(0);" class="waves-effect active" aria-expanded="true">
+                                    <i class="remixicon-table-line"></i>
+                                    <span> Vé khai giảng </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level mm-collapse mm-show" aria-expanded="false" style="">
+                                    
+                                    
+                                    <li >
+                                        <a href="index.html" >Danh sách đăng ký và duyệt vé</a>
+                                    </li>
+                                    <li class="mm-active" >
+                                        <a href="DanhSach.html" class="active">Danh sách vé đã duyệt</a>
+                                    </li>
+
+                                    
+                                </ul>
+                                <li>
+                                <a id="metamask" href="javascript: void(0);" class="waves-effect" >
+                                    <i class="remixicon-gitlab-fill"></i>
+                                    <span> Kết nối MetaMask </span>
+                                </a></li>
+                            </li>
+                            <li>
+                                  <a onclick="App.dangxuat();" href="javascript: void(0);" class="waves-effect">
+                                    <i class="remixicon-logout-box-line"></i>
+                                    <span>Đăng xuất</span>
+                                  </a>
+                                  
+                                </li>
+                        </ul>
+
+                    </div>
+                    <!-- End Sidebar -->
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+                        
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Vé khai giảng</a></li>
+                                            <li class="breadcrumb-item active">Danh sách vé đã duyệt</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Danh sách (BlockChain)</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title --> 
+
+            
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+
+                                        <h4 class="header-title">Danh sách đã duyệt</h4>
+                                        <p class="text-muted font-13 mb-4">
+                                            Danh sách đã duyệt vẽ được bảo mật
+                                        </p>
+                                        <div class="mb-2">
+                                        <div class="row">
+                                            <div class="col-12 text-sm-center form-inline">
+                                                <div class="form-group mr-2">
+                                                    <button onclick="App.in();" type="button" class="btn btn-primary waves-effect waves-light">In</button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div id="in" class="table-responsive">
+
+                                        <table class="table mb-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Stt</th>
+                                                <th>MSSV</th>
+                                                <th>Họ và tên</th>
+                                                <th>Tên</th>
+                                                <td>Mã sự kiện</td>
+                                                <td>Mã vé</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="tabledanhsach">
+                                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                        
+                                        
+                                        
+                                    </div> <!-- end card body-->
+                                </div> <!-- end card -->
+                            </div><!-- end col-->
+                        </div>
+                        <!-- end row-->                                                
+                    </div> <!-- container -->
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                       <div class="row">
+                            <div class="col-md-6">
+                               2020-2021 &copy; <i id="account"></i>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END wrapper -->
+
+        <!-- Right Sidebar -->
+        
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+        <!-- Vendor js -->
+
+        <script src="..\js\vendor.min.js"></script>
+
+
+        <!-- third party js -->
+        <script src="..\libs\datatables\jquery.dataTables.min.js"></script>
+        <script src="..\libs\datatables\dataTables.bootstrap4.js"></script>
+        <script src="..\libs\datatables\dataTables.responsive.min.js"></script>
+        <script src="..\libs\datatables\responsive.bootstrap4.min.js"></script>
+        <script src="..\libs\datatables\dataTables.buttons.min.js"></script>
+        <script src="..\libs\datatables\buttons.bootstrap4.min.js"></script>
+        <script src="..\libs\datatables\buttons.html5.min.js"></script>
+        <script src="..\libs\datatables\buttons.flash.min.js"></script>
+        <script src="..\libs\datatables\buttons.print.min.js"></script>
+        <script src="..\libs\datatables\dataTables.keyTable.min.js"></script>
+        <script src="..\libs\datatables\dataTables.select.min.js"></script>
+        <script src="..\libs\pdfmake\pdfmake.min.js"></script>
+        <script src="..\libs\pdfmake\vfs_fonts.js"></script>
+        <!-- third party js ends -->
+
+        <!-- Datatables init -->
+        <script  src="..\js\pages\datatables.init.js"></script>
+
+        <!-- App js -->
+
+        <script src="..\libs\Notiflix-2.6.0/dist/notiflix-aio-2.6.0.min.js"></script>
+       
+        <script src="..\js\app.min.js"></script>
+        <script src="..\js\web3.min.js"></script>
+        <script src="..\js\truffle-contract.js"></script>
+         <script src="..\js\app.js"></script>
+        
+    </body>
+</html>

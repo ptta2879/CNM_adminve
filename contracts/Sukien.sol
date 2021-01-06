@@ -24,12 +24,6 @@ contract Sukien  {
       require(checkMssv(_mssv,_masukien)!=false);
          _;
    }
-   modifier checkUser(){
-       address tk = 0x5d1224F28d6FeB5E0f7B6D29e90A3D9beabDcF20;
-       address tk2 = msg.sender;
-       require(tk != tk2);
-           _;
-   }
    function checkMssv(uint _mssv, string memory _masukien) view private returns(bool) {
          for( uint i=1; i<= nextId; i++){
              if(_mssv == Ves[i].mssv && keccak256(abi.encodePacked(_masukien)) == keccak256(abi.encodePacked(Ves[i].masukien)) ){
