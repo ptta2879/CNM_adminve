@@ -77,7 +77,7 @@ App = {
     var masukien = $("#masukien").val().toString();
     App.contracts.Sukien.deployed().then(function(instance){
     return instance.createVe(mssv,hoten,ten,masukien,{gas: 3000000, from: App.account}).then(function(result){
-      var url= 'http://ptta-cnm.herokuapp.com/dangkyve/updatetrangthai/'+mssv+'/'+1+'';
+      var url= 'https://ptta-cnm.herokuapp.com/dangkyve/updatetrangthai/'+mssv+'/'+1+'';
           $.ajax({
             url: url,
             type: 'GET',
@@ -124,7 +124,7 @@ App = {
     var username = $("#username").val().toString();
     var password =$("#password").val().toString();
     var passwordmd5 = $.md5(password);
-    var url = "http://ptta-cnm.herokuapp.com/taikhoan/"+username;
+    var url = "https://ptta-cnm.herokuapp.com/taikhoan/"+username;
     $.ajax({
       url: url,
       type: 'GET',
